@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Moments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moments.each do |moment| %>
+      <tr>
+        <td><%= moment.title %></td>
+        <td><%= ( moment.date - Date.today() ).to_i %> Days</td>
+        <td><%= link_to 'Edit', edit_moment_path(moment) %></td>
+        <td><%= link_to 'Destroy', moment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Moment', new_moment_path %>
