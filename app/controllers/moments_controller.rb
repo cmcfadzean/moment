@@ -5,7 +5,7 @@ class MomentsController < ApplicationController
   # GET /moments
   # GET /moments.json
   def index
-    @moments = current_user.moments
+    @moments = current_user.moments.order('date ASC')
   end
 
   # GET /moments/1

@@ -1,4 +1,4 @@
-<%= link_to moment.link do %>
-  <%= moment.title %>
-  <%= moment.date %>
+<%= link_to moment.link, class: "system-moment" do %>
+  <div class="system-moment__title"><%= moment.title %></div>
+  <div class="system-moment__date"><%= moment.date %></div>
 <% end %>
