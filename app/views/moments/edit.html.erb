@@ -3,4 +3,5 @@
 <%= render 'form', moment: @moment %>
 
 <%= link_to 'Show', @moment %> |
-<%= link_to 'Back', moments_path %>
+<%= link_to 'Back', moments_path %> |
+<%= link_to 'Destroy', @moment, method: :delete, data: { confirm: 'Are you sure?' } %>
