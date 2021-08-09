@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Moments</h1>
-
+<%= component "nav" do %>
+  <%= link_to '📅 New Moment', new_moment_path %>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -22,7 +21,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Moment', new_moment_path %>
