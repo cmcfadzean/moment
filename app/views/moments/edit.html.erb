@@ -1,7 +1,6 @@
-<h1>Editing Moment</h1>
-
-<%= render 'form', moment: @moment %>
-
-<%= link_to 'Show', @moment %> |
-<%= link_to 'Back', moments_path %> |
-<%= link_to 'Destroy', @moment, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= component "nav" do %>
+  <%= link_to '🔥 Delete Moment', @moment, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<%= component "container" do %>
+  <%= render 'form', moment: @moment %>
+<% end %>

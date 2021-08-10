@@ -1,27 +1,22 @@
-<%= form_with(model: moment, local: true) do |form| %>
-  <% if moment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(moment.errors.count, "error") %> prohibited this moment from being saved:</h2>
+<%= component "form" do %>
+  <%= form_with(model: moment, local: true) do |form| %>
+    <% if moment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(moment.errors.count, "error") %> prohibited this moment from being saved:</h2>
 
-      <ul>
-      <% moment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% moment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="">
+      <%= form.text_field :title, placeholder: "Moment Title" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="actions">
+    <div class="">
+      <%= form.date_select :date %>
+    </div>
     <%= form.submit %>
-  </div>
+  <% end %>
 <% end %>

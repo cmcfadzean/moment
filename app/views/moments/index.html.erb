@@ -2,7 +2,13 @@
   <%= link_to '📅 New Moment', new_moment_path %>
 <% end %>
 <%= component "container" do %>
-  <% @moments.each do |moment| %>
-    <%= component "moment", title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment)  %>
+  <% if @moments.blank? %>
+    <%= component "null" do %>
+      <%= image_tag "null.svg" %>
+    <% end %>
+  <% else %>
+    <% @moments.each do |moment| %>
+      <%= component "moment", title: moment.title, date: ( moment.date - Date.today() ).to_i, link: edit_moment_path(moment)  %>
+    <% end %>
   <% end %>
 <% end %>
